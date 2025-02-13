@@ -1,3 +1,6 @@
+-- [BOA-02] 게시글 목록 조회
+-- SELECT, 게시글 테이블에서 특정 카테고리 ID에 대해 게시글 삭제 여부가 0인 행 조회
+
 SELECT p.post_id
 		,pc.category_name
 		,u.nickname

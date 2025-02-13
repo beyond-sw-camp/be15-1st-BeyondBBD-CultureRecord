@@ -1,3 +1,6 @@
+-- [BOA-01-01] 닉네임 사용해서 게시글 검색
+-- SELECT, 게시글 테이블을 사용자 ID를 통해 사용자 테이블과 조인, 특정 닉네임의 사용자가 작성한 게시글에 대하여 게시글 삭제 여부가 0인 행 조회 ( VIEW 사용 ?)
+
 SELECT  pc.category_name
 		, p.post_id
 		, p.post_title

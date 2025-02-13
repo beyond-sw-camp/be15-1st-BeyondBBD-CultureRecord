@@ -1,3 +1,6 @@
+-- [BOA-03] 게시글 상세 조회
+-- SELECT, 게시글 테이블에서 게시글 ID로 조회
+
 SELECT p.post_id
        ,pc.category_name
        ,u.nickname
