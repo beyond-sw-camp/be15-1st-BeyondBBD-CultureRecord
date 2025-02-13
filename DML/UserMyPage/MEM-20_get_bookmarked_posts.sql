@@ -13,4 +13,4 @@ FROM bookmark b
 	JOIN post p ON b.post_id = p.post_id
 	JOIN user u ON p.user_id = u.user_id
 	WHERE b.user_id = 1 AND p.is_post_deleted != 1
-	ORDER BY bookmarked_at;
+	ORDER BY bookmarked_at DESC;

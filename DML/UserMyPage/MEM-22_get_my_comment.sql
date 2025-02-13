@@ -18,4 +18,4 @@ SELECT
 	LEFT JOIN `comment` pc ON c.parent_id = pc.comment_id
 	LEFT JOIN post p ON c.parent_id IS NULL AND c.post_id = p.post_id
 	WHERE c.user_id = 1 AND c.is_comment_deleted != 1
-	ORDER BY c.created_at;
+	ORDER BY c.created_at DESC;

@@ -14,4 +14,4 @@ SELECT
 	JOIN user u ON p.user_id = u.user_id
 	WHERE l.user_id = 1 AND p.is_post_deleted != 1
 	AND l.writing_type = 'post'
-	ORDER BY liked_at;
+	ORDER BY liked_at DESC;

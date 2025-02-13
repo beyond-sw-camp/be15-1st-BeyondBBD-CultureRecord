@@ -11,4 +11,4 @@ SELECT f.event_id AS '공연/전시 ID'
 	FROM favorite f
 	JOIN event e ON f.event_id = e.event_id
 	WHERE user_id = 1
-	ORDER BY added_at;
+	ORDER BY added_at DESC;
