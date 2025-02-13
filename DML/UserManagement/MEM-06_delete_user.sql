@@ -3,4 +3,4 @@
 
 UPDATE user
    SET is_user_deleted = 1
- WHERE login_id = 'splguyjr';
+ WHERE user_id = 1;

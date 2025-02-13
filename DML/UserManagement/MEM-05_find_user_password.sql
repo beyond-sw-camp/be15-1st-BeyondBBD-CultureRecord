@@ -3,4 +3,4 @@
 
 UPDATE user
    SET PASSWORD = '12345'
- WHERE login_id = 'splguyjr';
+ WHERE login_id = 'shinjjangu';
