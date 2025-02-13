@@ -10,7 +10,7 @@ SELECT
 	FROM block_user b
 	JOIN user u ON b.`blocked_user_id`= u.user_id
 	WHERE blocker_id = 1
-	ORDER BY blocked_at;
+	ORDER BY blocked_at DESC;
 
 
 
