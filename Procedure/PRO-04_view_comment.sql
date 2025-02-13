@@ -24,7 +24,8 @@ SELECT
 		, c.created_at AS '작성 시각'
   FROM comment c
   JOIN user u USING (user_id)
- WHERE post_id = postid;
+ WHERE post_id = postid
+ORDER BY c.created_at;
 
 END //
 
