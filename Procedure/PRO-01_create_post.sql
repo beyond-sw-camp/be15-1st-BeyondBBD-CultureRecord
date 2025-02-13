@@ -4,6 +4,8 @@
  * 리뷰 게시글 테이블에 추가할 수 있다. 카테고리가 3이 아닐 경우에는 게시글 테이블에 새로운 게시글을 추가한다.
 */
 
+DROP PROCEDURE create_post;
+
 DELIMITER //
 
 CREATE PROCEDURE create_post(
@@ -12,13 +14,16 @@ CREATE PROCEDURE create_post(
     IN p_post_title VARCHAR(255),
     IN p_post_content TEXT,
     IN p_event_record_id INT,
-    IN p_rating INT
+    IN p_rating INT,
+    IN p_attachment_paths TEXT -- 쉼표로 구분된 첨부파일 리스트 (MariaDB는 직접 파싱 필요)
 )
 BEGIN
     DECLARE ticket_verified INT;
     DECLARE new_post_id INT;
     DECLARE target_event_id INT;
-
+    DECLARE attachment_path VARCHAR(255);
+    DECLARE comma_index INT;
+    
     IF p_category_id = 3 THEN
         SELECT is_ticket_verified INTO ticket_verified
         FROM event_record
@@ -30,7 +35,6 @@ BEGIN
         END IF;
     END IF;
 
-    -- 게시글 작성
     INSERT INTO post (category_id, user_id, post_title, post_content)
     VALUES (p_category_id, p_user_id, p_post_title, p_post_content);
 
@@ -49,7 +53,21 @@ BEGIN
             review_rating_sum = review_rating_sum + p_rating
         WHERE event.event_id = target_event_id;
     END IF;
- 
+    
+    WHILE LENGTH(p_attachment_paths) > 0 DO
+        SET comma_index = LOCATE(',', p_attachment_paths);
+        
+        IF comma_index > 0 THEN
+            SET attachment_path = SUBSTRING_INDEX(p_attachment_paths, ',', 1);
+            SET p_attachment_paths = SUBSTRING(p_attachment_paths, comma_index + 1);
+        ELSE
+            SET attachment_path = p_attachment_paths;
+            SET p_attachment_paths = '';
+        END IF;
+
+        INSERT INTO attachment (post_id, file_url) VALUES (new_post_id, attachment_path);
+    END WHILE;
+
 END//
 
 DELIMITER ;
