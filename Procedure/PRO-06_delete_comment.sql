@@ -1,5 +1,5 @@
 /*
- * [PRO-06] 댓글 수정 프로시저
+ * [PRO-06] 댓글 삭제 프로시저
  * : PROCEDURE, 사용자ID, 삭제할 댓글ID를 입력받아
  *  				 comment 테이블에 UPDATE
 */
