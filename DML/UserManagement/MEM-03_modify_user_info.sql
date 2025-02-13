@@ -1,4 +1,5 @@
--- 회원 정보 수정	UPDATE, 사용자 테이블 정보 수정
+-- [MEM-03] 회원 정보 수정
+-- UPDATE, 사용자 테이블 정보 수정
 
 UPDATE user
    SET phone_number = '010-1234-5678'

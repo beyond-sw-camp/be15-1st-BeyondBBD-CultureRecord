@@ -1,4 +1,5 @@
--- 회원 가입 	INSERT, 사용자 테이블에 사용자 추가
+-- [MEM-01] 회원 가입
+-- INSERT, 사용자 테이블에 사용자 추가
 
 INSERT
   INTO user
