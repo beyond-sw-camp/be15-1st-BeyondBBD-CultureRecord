@@ -31,7 +31,7 @@ BEGIN
         END IF;
 
         
-        IF count_checked >= 3 THEN
+        IF count_checked = 3 THEN
             IF NEW.report_type = 'post' THEN
                 SELECT user_id INTO target_user_id FROM post WHERE post_id = NEW.post_id;
             ELSEIF NEW.report_type = 'comment' THEN
