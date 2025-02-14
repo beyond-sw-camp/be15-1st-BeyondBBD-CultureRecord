@@ -1,5 +1,3 @@
--- MAN-01. 공지사항 등록 NoticeInsert : INSERT, 공지사항 테이블에 관리자 ID 설정하여 삽입
+-- MAN-01. 공지사항 등록 : PROCEDURE, 공지사항 등록 프로시저를 호출하여 등록
 
-INSERT INTO noticeboard
-	(admin_id, notice_title, notice_content, notice_modify_at)
-VALUES (3, "first_notice", "testing", NULL);
+CALL create_notice(1,'제목','내용',1,'1.png,2.png');
