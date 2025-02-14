@@ -18,8 +18,8 @@ CREATE PROCEDURE create_notice(
     DECLARE attachment_path VARCHAR(255);
     DECLARE comma_index INT;
         
-    INSERT INTO noticeboard (admin_id, notice_title, notice_content)
-    VALUES (p_admin_id, p_notice_title, p_notice_content);
+    INSERT INTO noticeboard (admin_id, notice_title, pinned, notice_content)
+    VALUES (p_admin_id, p_notice_title, pin, p_notice_content);
 
    	SET new_notice_id = LAST_INSERT_ID(); 
 	
@@ -35,7 +35,7 @@ CREATE PROCEDURE create_notice(
             SET p_attachment_paths = '';
         END IF;
 
-    	INSERT INTO attachment (post_id, file_url, post_type) VALUES (new_notice_id, attachment_path, 'notice');
+    	INSERT INTO attachment (notice_id, file_url, post_type) VALUES (new_notice_id, attachment_path, 'notice');
     END WHILE;
 
 END//
