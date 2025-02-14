@@ -34,7 +34,7 @@ BEGIN
             SET MESSAGE_TEXT = '인증되지 않은 관람내역입니다';
         END IF;
     END IF;
-
+        
     INSERT INTO post (category_id, user_id, post_title, post_content)
     VALUES (p_category_id, p_user_id, p_post_title, p_post_content);
 
@@ -65,7 +65,7 @@ BEGIN
             SET p_attachment_paths = '';
         END IF;
 
-        INSERT INTO attachment (post_id, file_url) VALUES (new_post_id, attachment_path);
+    	INSERT INTO attachment (post_id, file_url, post_type) VALUES (new_post_id, attachment_path, 'post');
     END WHILE;
 
 END//
