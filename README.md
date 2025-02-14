@@ -224,8 +224,6 @@ root/
   </details>
 </details>
 
-&nbsp;
-
  <details><summary>slave 서버에서 데이터 변경 시 read only옵션으로 인한 오류 발생</summary>
     <img src="https://github.com/user-attachments/assets/982aa350-a811-4131-8b71-b26e7e1a1b97" alt="slave 서버 read-only 검증">
   </details>
@@ -244,7 +242,7 @@ root/
 
 ### **8-2. 더미데이터**
 
-프로젝트의 테이블 정의서는 [여기](DDL/dummydata.sql)에서 확인하실 수 있습니다.
+프로젝트의 테이블 정의서는 [여기](DML/dummydata.sql)에서 확인하실 수 있습니다.
 
 
 ### **8-3. 쿼리문**
