@@ -193,7 +193,7 @@ root/
 <br>
 
 ### 5. **테이블 정의서**
-프로젝트의 테이블 정의서는 [여기]([https://www.erdcloud.com/d/FJxdnLXLesqXExNYY](https://docs.google.com/spreadsheets/d/1TY2VLptt1K6LWfob7kfzoijazbi1YwQqH1Qx7IhQ560/edit?gid=0#gid=0))에서 확인하실 수 있습니다.
+프로젝트의 테이블 정의서는 [여기](https://docs.google.com/spreadsheets/d/1TY2VLptt1K6LWfob7kfzoijazbi1YwQqH1Qx7IhQ560/edit?gid=0#gid=0)에서 확인하실 수 있습니다.
 <br>
 └ 추가로 해당 테이블 생성 DDL 쿼리문은 [여기](DDL/DDL.sql)에서 확인하실 수 있습니다.
 <details> 
